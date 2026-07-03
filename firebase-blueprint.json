@@ -1,0 +1,31 @@
+{
+  "entities": {
+    "Appointment": {
+      "title": "Appointment",
+      "description": "A booking appointment.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "serviceName": { "type": "string" },
+        "price": { "type": "number" },
+        "currency": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "meetLink": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "serviceName", "price", "currency", "date", "time", "firstName", "lastName", "email", "status"]
+    }
+  },
+  "firestore": {
+    "appointments/{appointmentId}": {
+      "schema": { "$ref": "#/entities/Appointment" },
+      "description": "Stores user appointments."
+    }
+  }
+}
